@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om Spices — Farm-to-Kitchen, Pure Indian Spices</title>
+  <meta name="description" content="Om Spices delivers small-batch, single-origin Indian spices sourced directly from 12+ farms across 6 states. No fillers, no blends, just pure flavour." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SVG Noise Filter Definitions -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noisy" />
+        <feColorMatrix type="saturate" values="0" in="noisy" result="gray" />
+        <feBlend in="SourceGraphic" in2="gray" mode="overlay" result="blended" />
+        <feComposite in="blended" in2="SourceGraphic" operator="in" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="main-nav" class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Om Spices Home">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Om Spices</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#story" class="nav-link">Story</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#products" class="nav-link">Shop</a></li>
+        <li><a href="#origins" class="nav-link">Origins</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" id="nav-signin" class="btn-ghost">Sign In</a>
+        <a href="#products" id="nav-shop" class="btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Hero section">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1800&q=80&auto=format&fit=crop"
+        alt="Vibrant Indian spices in traditional brass bowls"
+        class="hero-img"
+        loading="eager"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1800&q=80'"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-noise"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>40+ Varieties · Freshly Sourced</span>
+      </div>
+
+      <h1 class="hero-headline">
+        where the <em>earth</em><br>
+        <span class="gold-dash">—</span> speaks in flavour
+      </h1>
+
+      <p class="hero-sub">
+        Small-batch spices, traced to the farm. No fillers, no compromise — just the pure, living soul of Indian cuisine.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#products" class="btn-primary btn-large" id="hero-shop-cta">Explore the Collection</a>
+        <a href="#story" class="btn-outline btn-large" id="hero-story-cta">Our Story</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-stat">
+          <span class="trust-num">12+</span>
+          <span class="trust-label">Partner Farms</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <span class="trust-num">6</span>
+          <span class="trust-label">Indian States</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <span class="trust-num">100%</span>
+          <span class="trust-label">No Fillers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MARQUEE STRIP
+  ═══════════════════════════════════════════ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>✦ No Fillers, Ever</span>
+      <span>✦ Small-Batch Sourced</span>
+      <span>✦ Farm-to-Kitchen</span>
+      <span>✦ Free Shipping ₹599+</span>
+      <span>✦ Single-Origin Verified</span>
+      <span>✦ No Artificial Colour</span>
+      <span>✦ No Fillers, Ever</span>
+      <span>✦ Small-Batch Sourced</span>
+      <span>✦ Farm-to-Kitchen</span>
+      <span>✦ Free Shipping ₹599+</span>
+      <span>✦ Single-Origin Verified</span>
+      <span>✦ No Artificial Colour</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TRUST PILLARS
+  ═══════════════════════════════════════════ -->
+  <section class="pillars section-gap" aria-labelledby="pillars-heading">
+    <div class="container">
+      <p id="pillars-heading" class="sr-only">What makes Om Spices different</p>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Pure &amp; Unadulterated</h3>
+          <p class="pillar-text">Every batch lab-tested. Zero fillers, zero artificial colour — exactly what nature intended.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 8c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16S32.837 8 24 8z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 14v10l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Single-Origin Traced</h3>
+          <p class="pillar-text">Each spice is mapped to its exact farm and harvest season. Know your food's story.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="20" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 20v-4a6 6 0 0112 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Small Batch Always</h3>
+          <p class="pillar-text">We never stockpile. Sourced in small lots, so freshness is guaranteed at every order.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 8l3.09 9.26H36l-7.27 5.28 2.77 8.46L24 26.52l-7.5 4.48 2.77-8.46L12 17.26h8.91L24 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Heritage Craft</h3>
+          <p class="pillar-text">Rooted in 3 years of direct farmer relationships built on trust, not contracts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ORIGIN STORY
+  ═══════════════════════════════════════════ -->
+  <section id="story" class="story section-gap dark-section" aria-labelledby="story-heading">
+    <div class="story-noise"></div>
+    <div class="container story-inner">
+      <div class="story-image-col">
+        <div class="story-img-frame">
+          <img
+            src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=80&auto=format&fit=crop"
+            alt="Indian spice farmer harvesting turmeric in the fields"
+            loading="lazy"
+          />
+          <div class="story-img-overlay"></div>
+          <div class="story-img-badge">
+            <span>Est. 2022 · Kozhikode, Kerala</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-text-col">
+        <span class="section-label">The Origin Story</span>
+        <h2 id="story-heading" class="section-title">rooted in the<br><em>soil of six states</em></h2>
+        <p class="story-body">
+          Om Spices began with a single question: why does masala from the local shop taste nothing like what grandmother used? The answer led us down rural roads, into spice gardens, and across six states — building relationships with farmers who still grow the old way.
+        </p>
+        <p class="story-body">
+          Three years, twelve farms, and one unwavering rule: if we wouldn't use it in our own kitchen, it doesn't leave the warehouse.
+        </p>
+
+        <div class="story-stats">
+          <div class="story-stat">
+            <span class="stat-num">12+</span>
+            <span class="stat-label">Partner Farms</span>
+          </div>
+          <div class="story-stat">
+            <span class="stat-num">6</span>
+            <span class="stat-label">States Sourced</span>
+          </div>
+          <div class="story-stat">
+            <span class="stat-num">3 yrs</span>
+            <span class="stat-label">Of Sourcing</span>
+          </div>
+        </div>
+
+        <div class="farm-tags">
+          <span class="farm-tag">Kerala</span>
+          <span class="farm-tag">Karnataka</span>
+          <span class="farm-tag">Rajasthan</span>
+          <span class="farm-tag">Uttar Pradesh</span>
+          <span class="farm-tag">Tamil Nadu</span>
+          <span class="farm-tag">Odisha</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CATEGORIES
+  ═══════════════════════════════════════════ -->
+  <section id="categories" class="categories section-gap" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Browse by Kind</span>
+        <h2 id="categories-heading" class="section-title">what are you<br><em>cooking today?</em></h2>
+      </div>
+
+      <div class="categories-grid">
+        <a href="#products" class="cat-card" id="cat-whole" aria-label="Browse whole spices">
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=700&q=80&auto=format&fit=crop" alt="Whole spices including cardamom, cloves and cinnamon" loading="lazy" class="cat-img" />
+          <div class="cat-noise"></div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <h3 class="cat-title">Whole Spices</h3>
+            <p class="cat-sub">Cardamom, clove, cinnamon &amp; more</p>
+          </div>
+        </a>
+
+        <a href="#products" class="cat-card" id="cat-ground" aria-label="Browse ground powder spices">
+          <img src="https://images.unsplash.com/photo-1596471671090-2baba3e1f57a?w=700&q=80&auto=format&fit=crop" alt="Colourful ground spice powders in wooden bowls" loading="lazy" class="cat-img" />
+          <div class="cat-noise"></div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <h3 class="cat-title">Ground Powders</h3>
+            <p class="cat-sub">Chilli, turmeric, coriander &amp; more</p>
+          </div>
+        </a>
+
+        <a href="#products" class="cat-card" id="cat-blends" aria-label="Browse signature spice blends">
+          <img src="https://images.unsplash.com/photo-1599909631552-c16c0b36e9d6?w=700&q=80&auto=format&fit=crop" alt="Indian spice blends with garam masala varieties" loading="lazy" class="cat-img" />
+          <div class="cat-noise"></div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <h3 class="cat-title">Signature Blends</h3>
+            <p class="cat-sub">Garam masala, biryani &amp; rasam</p>
+          </div>
+        </a>
+
+        <a href="#products" class="cat-card" id="cat-gifts" aria-label="Browse gift collections">
+          <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?w=700&q=80&auto=format&fit=crop" alt="Premium spice gift jars beautifully arranged" loading="lazy" class="cat-img" />
+          <div class="cat-noise"></div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <h3 class="cat-title">Gift Collections</h3>
+            <p class="cat-sub">Curated hampers &amp; artisan jars</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BESTSELLERS
+  ═══════════════════════════════════════════ -->
+  <section id="products" class="products section-gap" aria-labelledby="products-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Bestsellers</span>
+        <h2 id="products-heading" class="section-title">what our kitchens<br><em>can't live without</em></h2>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card" id="product-chilli">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80&auto=format&fit=crop" alt="Vibrant red Kashmiri chilli powder" loading="lazy" class="product-img" />
+            <div class="product-img-noise"></div>
+            <div class="product-img-overlay"></div>
+            <span class="product-badge">Bestseller</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Ground Powder</span>
+            <h3 class="product-name">Kashmiri Chilli</h3>
+            <p class="product-desc">Deep colour, gentle heat. Stone-ground from Ramban Valley.</p>
+            <div class="product-footer">
+              <span class="product-price">₹180</span>
+              <button class="btn-add" id="add-chilli" aria-label="Add Kashmiri Chilli to cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" id="product-cardamom">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1561918216-a07f7b421a05?w=600&q=80&auto=format&fit=crop" alt="Green cardamom pods freshly harvested" loading="lazy" class="product-img" />
+            <div class="product-img-noise"></div>
+            <div class="product-img-overlay"></div>
+            <span class="product-badge">New Harvest</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Whole Spice</span>
+            <h3 class="product-name">Green Cardamom</h3>
+            <p class="product-desc">Idukki-grown. Intensely fragrant, hand-sorted pods.</p>
+            <div class="product-footer">
+              <span class="product-price">₹320</span>
+              <button class="btn-add" id="add-cardamom" aria-label="Add Green Cardamom to cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" id="product-turmeric">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1615485291234-9d694218aeb3?w=600&q=80&auto=format&fit=crop" alt="Bright golden turmeric powder in a bowl" loading="lazy" class="product-img" />
+            <div class="product-img-noise"></div>
+            <div class="product-img-overlay"></div>
+            <span class="product-badge">Fan Favourite</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Ground Powder</span>
+            <h3 class="product-name">Lakadong Turmeric</h3>
+            <p class="product-desc">7% curcumin content. The world's finest, from Meghalaya.</p>
+            <div class="product-footer">
+              <span class="product-price">₹210</span>
+              <button class="btn-add" id="add-turmeric" aria-label="Add Lakadong Turmeric to cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" id="product-pepper">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=600&q=80&auto=format&fit=crop" alt="Black pepper corns freshly harvested" loading="lazy" class="product-img" />
+            <div class="product-img-noise"></div>
+            <div class="product-img-overlay"></div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Whole Spice</span>
+            <h3 class="product-name">Malabar Black Pepper</h3>
+            <p class="product-desc">Wayanad harvest. Peppery, bold, with a lingering warmth.</p>
+            <div class="product-footer">
+              <span class="product-price">₹240</span>
+              <button class="btn-add" id="add-pepper" aria-label="Add Malabar Black Pepper to cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="products-footer">
+        <a href="#" id="view-all-products" class="btn-outline btn-large">View Full Collection →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FARM ORIGINS PHOTOGRAPHY STRIP
+  ═══════════════════════════════════════════ -->
+  <section id="origins" class="origins section-gap" aria-labelledby="origins-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where We Harvest</span>
+        <h2 id="origins-heading" class="section-title">the land behind<br><em>every jar</em></h2>
+      </div>
+
+      <div class="origins-grid">
+        <div class="origin-panel" id="origin-kerala">
+          <img src="https://images.unsplash.com/photo-1580391564590-ae0f7543a234?w=800&q=80&auto=format&fit=crop" alt="Lush spice gardens of Kerala" loading="lazy" class="origin-img" />
+          <div class="origin-noise"></div>
+          <div class="origin-overlay"></div>
+          <div class="origin-label">
+            <span class="origin-state">Kerala</span>
+            <span class="origin-spices">Cardamom · Pepper · Ginger</span>
+          </div>
+        </div>
+
+        <div class="origin-panel" id="origin-rajasthan">
+          <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80&auto=format&fit=crop" alt="Rajasthan chilli and cumin fields under sun" loading="lazy" class="origin-img" />
+          <div class="origin-noise"></div>
+          <div class="origin-overlay"></div>
+          <div class="origin-label">
+            <span class="origin-state">Rajasthan</span>
+            <span class="origin-spices">Cumin · Coriander · Chilli</span>
+          </div>
+        </div>
+
+        <div class="origin-panel" id="origin-karnataka">
+          <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=800&q=80&auto=format&fit=crop" alt="Karnataka vanilla and pepper vine gardens" loading="lazy" class="origin-img" />
+          <div class="origin-noise"></div>
+          <div class="origin-overlay"></div>
+          <div class="origin-label">
+            <span class="origin-state">Karnataka</span>
+            <span class="origin-spices">Vanilla · Clove · Nutmeg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOUNDER QUOTE
+  ═══════════════════════════════════════════ -->
+  <section class="quote-section dark-section section-gap" aria-labelledby="quote-heading">
+    <div class="quote-noise"></div>
+    <div class="container quote-inner">
+      <div class="quote-mark" aria-hidden="true">"</div>
+      <blockquote id="quote-heading" class="quote-text">
+        <em>We don't sell spices. We sell the memory of a grandmother's kitchen, the honesty of a farmer's hands, and the integrity of food that has never been tampered with.</em>
+      </blockquote>
+      <cite class="quote-author">Om Prabhu · Founder, Om Spices</cite>
+
+      <div class="brand-features">
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span class="feature-label">Freshness Sealed</span>
+          <span class="feature-desc">Nitrogen-flushed within 48hrs of grinding</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span class="feature-label">No Compromise</span>
+          <span class="feature-desc">Rejected if it doesn't meet our kitchen standard</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span class="feature-label">Farmer First</span>
+          <span class="feature-desc">Fair price paid directly — no middlemen</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <span class="feature-label">Sustainable Pack</span>
+          <span class="feature-desc">Kraft + glass jars that can be reused and recycled</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials section-gap" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What Our Customers Say</span>
+        <h2 id="testimonials-heading" class="section-title">voices from<br><em>real kitchens</em></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card" id="testimonial-1">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"The Kashmiri chilli gave my dal a colour I've never achieved before. It genuinely tastes like something my mother used to make."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Priya K.</span>
+            <span class="author-city">Bengaluru</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-2">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"Finally found a source I trust completely. The Lakadong turmeric has a scent so deep and earthy — all other brands feel synthetic now."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Arjun M.</span>
+            <span class="author-city">Mumbai</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-3">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial-text">"Gifted the hamper to a friend abroad — she said it made her chai taste like home again. That's the highest review I can give."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Nithya R.</span>
+            <span class="author-city">Chennai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BUNDLE CTA
+  ═══════════════════════════════════════════ -->
+  <section class="bundle section-gap" aria-labelledby="bundle-heading">
+    <div class="container">
+      <div class="bundle-box" id="bundle-cta">
+        <div class="bundle-noise"></div>
+        <div class="bundle-inner">
+          <div class="bundle-text">
+            <span class="section-label">Limited Batch · 120 Units</span>
+            <h2 id="bundle-heading" class="bundle-title">everyday essentials<br><em>bundle</em></h2>
+            <p class="bundle-desc">The five spices every kitchen needs. Turmeric, chilli, coriander, cumin, and garam masala — in one carefully curated box.</p>
+            <div class="bundle-pricing">
+              <span class="bundle-original">₹990</span>
+              <span class="bundle-sale">₹750</span>
+              <span class="bundle-save">Save ₹240</span>
+            </div>
+            <a href="#" id="bundle-buy-cta" class="btn-primary btn-large">Get the Bundle</a>
+          </div>
+          <div class="bundle-visual">
+            <img src="https://images.unsplash.com/photo-1612198790700-cae1f3e3e598?w=700&q=80&auto=format&fit=crop" alt="Om Spices everyday essentials bundle with five spice jars" loading="lazy" class="bundle-img" />
+            <div class="bundle-img-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NEWSLETTER
+  ═══════════════════════════════════════════ -->
+  <section class="newsletter dark-section section-gap" aria-labelledby="newsletter-heading">
+    <div class="newsletter-noise"></div>
+    <div class="container newsletter-inner">
+      <span class="section-label">Stay in the Season</span>
+      <h2 id="newsletter-heading" class="newsletter-title">new harvests, recipes<br><em>and farm stories</em></h2>
+      <p class="newsletter-sub">Join 4,200+ spice lovers who get first access to new batches.</p>
+      <form class="newsletter-form" id="newsletter-form" action="#" novalidate>
+        <label for="email-input" class="sr-only">Enter your email address</label>
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="newsletter-input"
+          aria-label="Email address"
+        />
+        <button type="submit" id="newsletter-submit" class="btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-fine">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-noise"></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo" aria-label="Om Spices Home">
+          <span class="logo-mark">✦</span>
+          <span>Om Spices</span>
+        </a>
+        <p class="footer-tagline">Farm-to-kitchen spices.<br>Pure, honest, unapologetically bold.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Om Spices on Instagram" class="social-link" id="footer-instagram">Instagram</a>
+          <a href="#" aria-label="Om Spices on YouTube" class="social-link" id="footer-youtube">YouTube</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Shop</h4>
+        <ul role="list">
+          <li><a href="#" class="footer-link">Whole Spices</a></li>
+          <li><a href="#" class="footer-link">Ground Powders</a></li>
+          <li><a href="#" class="footer-link">Signature Blends</a></li>
+          <li><a href="#" class="footer-link">Gift Collections</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Discover</h4>
+        <ul role="list">
+          <li><a href="#story" class="footer-link">Our Story</a></li>
+          <li><a href="#origins" class="footer-link">Farm Origins</a></li>
+          <li><a href="#" class="footer-link">Recipes</a></li>
+          <li><a href="#" class="footer-link">Harvest Calendar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Help</h4>
+        <ul role="list">
+          <li><a href="#" class="footer-link">Shipping Policy</a></li>
+          <li><a href="#" class="footer-link">Returns</a></li>
+          <li><a href="#" class="footer-link">Contact Us</a></li>
+          <li><a href="#" class="footer-link">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Om Spices Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
